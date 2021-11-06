@@ -6,7 +6,7 @@
 
 .main-panel-links{
     flex-shrink: 0;
-    width: 250px;
+    width: 270px;
     height: min-content;
     display: grid;
     gap: 5px 5px;
@@ -33,7 +33,6 @@
         }
     }
 }
-
 .main-panel-info{
     width: 100%;
     h1{
@@ -334,7 +333,7 @@ $voting-image-height: 85px;
         }
         .voting-links{
             text-transform: uppercase;
-            padding: 12px;
+            padding: 15px;
             background: rgba(255, 255, 255, 0.03);
             border: 1px solid rgba(171, 171, 171, 0.06);
             gap: 10px;
@@ -346,11 +345,9 @@ $voting-image-height: 85px;
         }
     }
     .voting-top-container{
-        // width: 100%;
         #voting-top{
             margin-top: 10px;
             display: grid;
-            // width: 100%;
             grid-template-columns: $voting-image-height $voting-image-height $voting-image-height;
             flex-wrap: wrap;
             justify-content: space-between;

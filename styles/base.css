@@ -23,14 +23,16 @@ html {
 }
 
 body {
-  background-image: linear-gradient(0deg, rgba(0, 0, 0, 0.88), rgba(0, 0, 0, 0.88)), url("../images/base/background.jpg");
+  background-image: linear-gradient(0deg, rgba(0, 0, 0, 0.9), rgba(0, 0, 0, 0.9)), url("../images/base/background.jpg");
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
+  height: 100%;
 }
 
 .base-container {
   padding: 40px 0;
+  padding-bottom: 0px !important;
   margin: auto;
   width: 1100px;
 }
@@ -198,5 +200,63 @@ header > .right > a:hover {
   header .right a {
     font-size: 14px !important;
     padding: 0 5px !important;
+  }
+}
+
+footer {
+  box-sizing: border-box;
+  margin-bottom: 20px;
+  margin-top: 20px;
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  text-transform: uppercase;
+  justify-content: space-between;
+}
+
+footer .info a:hover {
+  text-decoration: underline;
+}
+
+footer .info h1 {
+  margin-bottom: 10px;
+}
+
+footer .info h2 {
+  font-weight: normal;
+  font-size: 12px;
+  color: #ADADAD;
+  line-height: 130%;
+}
+
+footer .links {
+  text-transform: uppercase;
+  margin-top: 12px;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+}
+
+footer .links a {
+  font-size: 12px;
+  color: #A9A9A9;
+}
+
+footer .links a:hover {
+  text-decoration: underline;
+}
+
+@media (max-width: 480px) {
+  footer {
+    flex-direction: column;
+  }
+  footer .links {
+    flex-direction: row;
+  }
+  footer .links a {
+    font-size: 20px !important;
   }
 }
