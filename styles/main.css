@@ -149,6 +149,10 @@
 }
 
 .news-panel #news .news-item {
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-clip: padding-box;
   position: relative;
   height: 420px;
   border: 1px solid rgba(173, 173, 173, 0.35);
