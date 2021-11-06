@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Main page | Niisaba</title>
+    <link rel="stylesheet" href="../styles/base.css">
+    <script src="../scripts/main/main.js"></script>
+</head>
+<body>
+    <div class='base-container'>
+        <header>
+            <div class='left'>
+                <a href='' class='logo'>Niisaba</a>
+                <nav>
+                    <a href="">Форум</a>
+                    <a href="">Серверы</a>
+                    <a href="">Донат</a>
+                    <a href="">РАЗНОЕ</a>
+                </nav>
+            </div>
+            <div class='right button-base'>
+                <a href=''>Войти</a>
+                <a href=''>Регистрация</a>
+            </div>
+        </header>
+        <div id='base-content'>
+            <div class='left-container'>
+                <section class='flex-row-always'>
+                    <div class='main-panel-info'>
+                        <h1>АЛО ЭТО ИНТЕРНЕТ?</h1>
+                        <h2>Нет блять закусочная!</h2>
+                    </div>
+                    <div class='main-panel-links'>
+                        <a href=''><div class='button-base main'>Скачать лаунчер</div></a>
+                        <a href=''><div class='button-base'>Discord</div></a>
+                        <a href=''><div class='button-base'>VK</div></a>
+                        <a href=''><div class='button-base'>TELEGRAM</div></a>
+                    </div>
+                </section>
+                <section class='news-container'>
+                    <div class='header'>
+                        <h1 class='section-name-text'>Новости</h1>
+                        <div></div>
+                    </div>
+                    <div class='flex-row-always'>
+                        <div class='news-paginator'>
+                            <div onclick="decrementNewsPanel()"><img src="../images/base/arrow.svg"></div>
+                            <div><span id='news-page'>01</span>/<span id='news-max-page'>03</span></div>
+                            <div onclick="incrementNewsPanel()"><img src="../images/base/arrow.svg"></div>
+                        </div>
+                        <div class="news-panel">
+                            <div id='news' style='top: 0px;' class='4-items'>
+                                <a href='1'>
+                                    <div class='news-item'>
+                                        <div class='date'>11-03</div>
+                                        <div class='info'>
+                                            <h1>Ну вот что ты делаешь тварь!</h1>
+                                            <h2>Ну зачем??? Для кого я не понимаю!</h2>
+                                        </div>
+                                    </div>
+                                </a>
+                                <a href='2' class='hidden'><div class='news-item'></div></a>
+                                <a href='3'><div class='news-item'></div></a>
+                                <a href='4'><div class='news-item'></div></a>
+                                <a href='5'><div class='news-item'></div></a>
+                                <a href='7'>
+                                    <div class='news-item'>
+                                        <div class='date'>11-03</div>
+                                        <div class='info'>
+                                            <h1>Делаю сайт!</h1>
+                                            <h2>И получаю удовольствие!</h2>
+                                        </div>
+                                    </div>
+                                </a>
+                                <a href='8'><div class='news-item'></div></a>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+            </div>
+            <div class='right-container'>
+                <section class='global-servers-status'>
+                    <h1 class='section-name-text'>Статус серверов</h1>
+                    <div id='servers-status'>
+                        <div class='server-item violet' data-online=9>
+                            <div>
+                                <div>Mysteruim<span>1.12.2</span></div>
+                                <div>ТЕХНО-Магический сервер</div>
+                            </div>
+                        </div>
+                        <div class='server-item blue' data-online=500>
+                            <div>
+                                <div>Mysteruim<span>1.12.2</span></div>
+                                <div>Магический сервер</div>
+                            </div>
+                        </div>
+                        <div class='server-item violet' data-online=66>
+                            <div>
+                                <div>GT:NEWHORIZONS<span>1.7.10</span></div>
+                                <div>ТЕХНО-Магический сервер</div>
+                            </div>
+                        </div>
+                        <div class='server-item green' data-online=36>
+                            <div>
+                                <div>RedPower<span>1.4.7</span></div>
+                                <div>Школосервер</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class='server-online'>
+                        <span>Общий онлайн <span id='online-current'>50</span> из <span id='online-max'>150</span></span>
+                        <div><div id='online-percent' style='width: 33.3333%'></div></div>
+                    </div>
+                </section>
+                <section class='voting-container'>
+                    <div class='voting-links-container'>
+                        <h1 class='section-name-text'>Голосование</h1>
+                        <div class='voting-links'>
+                            <a href=''><div class='button-base'>МСТОР</div></a>
+                            <a href=''><div class='button-base'>TOPCRAFT</div></a>
+                            <a href=''><div class='button-base'>FAIRTOP</div></a>
+                            <a href=''><div class='button-base'>MCRATE</div></a>
+                        </div>
+                    </div>
+                    <div class='voting-top-container'>
+                        <h1 class='section-name-text'>Топ голосующих</h1>
+                        <div id='voting-top'>
+                            <a href=''><img src="../images/base/test-avatar.png" alt="">АБДОЛБУС_30000</a>
+                            <a href=''><img src="../images/base/test-avatar.png" alt="">Makatymba2001</a>
+                            <a href=''><img src="../images/base/test-avatar.png" alt="">ToPayRespect</a>
+                            <a href=''><img src="../images/base/test-avatar.png" alt="">АМОГУС</a>
+                            <a href=''><img src="../images/base/test-avatar.png" alt="">АМОГУС</a>
+                            <a href=''><img src="../images/base/test-avatar.png" alt="">АМОГУС</a>
+                            <a href=''><img src="../images/base/test-avatar.png" alt="">АМОГУС</a>
+                            <a href=''><img src="../images/base/test-avatar.png" alt="">АМОГУС</a>
+                            <a href=''><img src="../images/base/test-avatar.png" alt="">АБОООООБАААААААААААААААААА</a>
+                        </div>
+                    </div>
+                </section>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
