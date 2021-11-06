@@ -3,13 +3,22 @@
 <head>
     <meta charset="UTF-8">
     <title>Main page | Niisaba</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="../styles/base.css">
+    <link rel="stylesheet" href="../styles/main.css">
     <script src="../scripts/main/main.js"></script>
 </head>
 <body>
     <div class='base-container'>
         <header>
             <div class='left'>
+                <div id='mobile-menu' tabindex="-1">
+                    <a href="" class='button-base'>Форум</a>
+                    <a href="" class='button-base'>Серверы</a>
+                    <a href="" class='button-base'>Донат</a>
+                    <a href="" class='button-base'>РАЗНОЕ</a>
+                </div>
+                <div id='menu-button' onclick='showMobileMenu()'><img src="../images/base/menu.svg" alt=""></div>
                 <a href='' class='logo'>Niisaba</a>
                 <nav>
                     <a href="">Форум</a>
@@ -25,7 +34,7 @@
         </header>
         <div id='base-content'>
             <div class='left-container'>
-                <section class='flex-row-always'>
+                <section class='main-panel-container'>
                     <div class='main-panel-info'>
                         <h1>АЛО ЭТО ИНТЕРНЕТ?</h1>
                         <h2>Нет блять закусочная!</h2>
@@ -42,11 +51,11 @@
                         <h1 class='section-name-text'>Новости</h1>
                         <div></div>
                     </div>
-                    <div class='flex-row-always'>
+                    <div class='news-flex-container'>
                         <div class='news-paginator'>
-                            <div onclick="decrementNewsPanel()"><img src="../images/base/arrow.svg"></div>
+                            <div onclick="selectNewsPage(-1)"><img src="../images/base/arrow.svg"></div>
                             <div><span id='news-page'>01</span>/<span id='news-max-page'>03</span></div>
-                            <div onclick="incrementNewsPanel()"><img src="../images/base/arrow.svg"></div>
+                            <div onclick="selectNewsPage(1)"><img src="../images/base/arrow.svg"></div>
                         </div>
                         <div class="news-panel">
                             <div id='news' style='top: 0px;' class='4-items'>
@@ -120,6 +129,8 @@
                             <a href=''><div class='button-base'>TOPCRAFT</div></a>
                             <a href=''><div class='button-base'>FAIRTOP</div></a>
                             <a href=''><div class='button-base'>MCRATE</div></a>
+                            <a href=''><div class='button-base'>Что-то ещё</div></a>
+                            <a href=''><div class='button-base'>И ещё что-то</div></a>
                         </div>
                     </div>
                     <div class='voting-top-container'>
