@@ -28,11 +28,11 @@
                 </nav>
             </div>
             <div class='right button-base'>
-                <a href=''>Войти</a>
+                <a onclick="showLoginMenu()">Войти</a>
                 <a href=''>Регистрация</a>
             </div>
         </header>
-        <div id='base-content'>
+        <div id='base-content' tabindex="-1">
             <div class='left-container'>
                 <section class='main-panel-container'>
                     <div class='main-panel-info'>
@@ -161,6 +161,28 @@
                 <a href="">DISCORD</a>
             </div>
         </footer>
+    </div>
+    <div id='login-panel'>
+        <div class='login-form-panel'>
+            <div class='header'>
+                <span>Авторизация пользователя</span>
+                <img src="../images/base/x-mark.svg" onclick="closeLoginMenu()">
+            </div>
+            <div id='login-form'>
+                <input type="text" placeholder="Логин" class='input-base'>
+                <input type="text" placeholder="Пароль" class='input-base'>
+                <input type="submit" value="Войти" onclick="">
+            </div>
+            <div class='subforms'>
+                <a href='123' class=''>Забыли пароль?</a>
+                <a href='456'>Регистрация</a>
+            </div>
+            <div class='links'>
+                <a href="">VK</a>
+                <a href="">TELEGRAM</a>
+                <a href="">DISCORD</a>
+            </div>
+        </div>
     </div>
 </body>
 </html>

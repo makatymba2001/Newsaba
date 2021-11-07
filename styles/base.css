@@ -10,6 +10,7 @@
 
 a {
   text-decoration: none;
+  cursor: pointer;
 }
 
 h1, h2, h3, h4, h5 {
@@ -50,9 +51,15 @@ body {
   color: white !important;
 }
 
-.flex-row-always {
-  display: flex;
-  flex-direction: row;
+.input-base {
+  background-color: #1D1D1D;
+  padding: 5px 15px;
+  outline: none;
+  border: 1px solid rgba(171, 171, 171, 0.35) !important;
+}
+
+.input-base:focus {
+  border: 1px solid rgba(171, 171, 171, 0.6) !important;
 }
 
 .section-name-text {
@@ -270,4 +277,123 @@ footer .links a:hover {
   footer .links a {
     font-size: 20px !important;
   }
+}
+
+#login-panel {
+  position: fixed;
+  visibility: collapse;
+  opacity: 0;
+  transition: visibility 0.15s, opacity 0.15s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  backdrop-filter: blur(3px);
+}
+
+#login-panel.visible {
+  transition: visibility 0s, opacity 0.15s;
+  visibility: visible;
+  opacity: 1;
+}
+
+#login-panel .login-form-panel {
+  text-transform: uppercase;
+  box-shadow: 0px 0px 25px 5px rgba(0, 0, 0, 0.25);
+  font-size: 14px;
+  font-weight: 300;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 15px;
+  padding: 20px 25px;
+  background-color: #131010;
+}
+
+#login-panel .login-form-panel .header {
+  margin-bottom: 20px;
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+}
+
+#login-panel .login-form-panel .header span {
+  color: #A9A9A9;
+}
+
+#login-panel .login-form-panel .header img {
+  filter: brightness(65%);
+  cursor: pointer;
+  height: 24px;
+  transition: filter 0.15s;
+}
+
+#login-panel .login-form-panel .header img:hover {
+  filter: brightness(100%);
+}
+
+#login-panel .login-form-panel #login-form {
+  display: flex;
+  flex-direction: column;
+  gap: 12.5px;
+}
+
+#login-panel .login-form-panel #login-form input {
+  text-transform: uppercase;
+  width: 500px;
+  height: 40px;
+  font-size: 14px;
+  font-weight: 300;
+}
+
+#login-panel .login-form-panel #login-form input[type='submit'] {
+  padding: 6px 15px 4px;
+  cursor: pointer;
+  background: rgba(255, 255, 255, 0.15);
+  transition: background 0.2s;
+  border: 1px solid rgba(171, 171, 171, 0.35) !important;
+}
+
+#login-panel .login-form-panel #login-form input[type='submit']:hover {
+  background: rgba(255, 255, 255, 0.2);
+}
+
+#login-panel .login-form-panel .subforms {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-around;
+  width: 300px;
+  font-size: 12px;
+}
+
+#login-panel .login-form-panel .subforms a {
+  transition: color 0.15s;
+}
+
+#login-panel .login-form-panel .subforms a:hover {
+  color: white !important;
+}
+
+#login-panel .login-form-panel .links {
+  margin-top: 30px;
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-around;
+}
+
+#login-panel .login-form-panel .links a {
+  color: #A9A9A9 !important;
+  transition: color 0.15s;
+}
+
+#login-panel .login-form-panel .links a:hover {
+  color: white !important;
 }
