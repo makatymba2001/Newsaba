@@ -9,7 +9,6 @@
 }
 
 .register-form-container input {
-  text-transform: uppercase;
   font-size: 14px;
   height: 40px;
   width: 100%;
@@ -20,7 +19,7 @@
 }
 
 .register-form-container input#register-login {
-  text-transform: none;
+  text-transform: none !important;
 }
 
 .register-form-container > div {
@@ -44,7 +43,6 @@
   cursor: pointer;
   color: #ADADAD;
   font-size: 14px;
-  text-transform: uppercase;
   width: 350px;
   display: flex;
   align-items: center;

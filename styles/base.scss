@@ -6,6 +6,7 @@
     color: rgba(255, 255, 255, 0.85);
     box-sizing: border-box;
     line-height: 100%;
+    text-transform: uppercase;
 }
 a{
     text-decoration: none;
@@ -90,7 +91,6 @@ body{
     color: white;
     font-size: 18px;
     font-style: normal;
-    text-transform: uppercase;
     font-weight: 400;
 }
 // ----------------------------
@@ -107,7 +107,6 @@ header{
         display: flex;
         flex-direction: row;
         font-size: 20px;
-        text-transform: uppercase;
         align-items: center;
         justify-content: space-around;
     }
@@ -194,12 +193,6 @@ header{
         gap: 20px;
         width: 100%;
     }
-    .left-container{
-        flex: 6 0;
-    }
-    .right-container{
-        flex: 4 0;
-    }
 }
 
 @media (max-width: 1150px) {
@@ -237,7 +230,6 @@ footer{
     display: flex;
     flex: 0 0;
     flex-direction: row;
-    text-transform: uppercase;
     justify-content: space-between;
     .info{
         a:hover{
@@ -258,7 +250,6 @@ footer{
         }
     }
     .links{
-        text-transform: uppercase;
         margin-top: 12px;
         height: 100%;
         display: flex;
@@ -309,7 +300,6 @@ footer{
         opacity: 1;
     }
     .login-form-panel{
-        text-transform: uppercase;
         box-shadow: 0px 0px 25px 5px rgba(0, 0, 0, 0.25);
         font-size: 14px;
         font-weight: 300;
@@ -344,7 +334,6 @@ footer{
             flex-direction: column;
             gap: 12.5px;
             input{
-                text-transform: uppercase;
                 width: 500px;
                 height: 40px;
                 font-size: 14px;

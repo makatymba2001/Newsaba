@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Register | Niisaba</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="../styles/base.css">
+    <link rel="stylesheet" href="../styles/dotane-groups.css">
+</head>
+<body>
+    <div class='base-container'>
+        <header>
+            <div class='left'>
+                <div id='mobile-menu' tabindex="-1">
+                    <a href="" class='button-base'>Форум</a>
+                    <a href="" class='button-base'>Серверы</a>
+                    <a href="" class='button-base'>Донат</a>
+                    <a href="" class='button-base'>РАЗНОЕ</a>
+                </div>
+                <div id='menu-button' onclick='showMobileMenu()'><img src="../images/base/menu.svg" alt=""></div>
+                <a href='' class='logo'>Niisaba</a>
+                <nav>
+                    <a href="">Форум</a>
+                    <a href="">Серверы</a>
+                    <a href="">Донат</a>
+                    <a href="">РАЗНОЕ</a>
+                </nav>
+            </div>
+            <div class='right button-base'>
+                <a onclick="showLoginMenu()">Войти</a>
+                <a href=''>Регистрация</a>
+            </div>
+        </header>
+        <div id='base-content' tabindex="-1">
+            <div class='left-container'>
+                <div class='title-base'>
+                    <h1>Донат</h1>
+                    <h2>Спасибо за поддержку проекта!</h2>
+                </div>
+                <section>
+                    <div class='donate-group'>
+                        <div class='group-info-container'>
+                            <div class='group-image' style='background-image: url("../images/base/test-donate-group.jpg")'></div>
+                            <div class='group-info'>
+                                <div class='title'>
+                                    <h1>Player</h1>
+                                    <h2>Бесплатно</h2>
+                                </div>
+                                <div class='info'>
+                                    <p>Много приватов</p>
+                                    <p>Ещё больше приватов</p>
+                                    <p>Прям совсем много приватов!</p>
+                                    <p>Ну больше уже некуда, так что есть <span>/help</span></p>
+                                    <p><span>/rtp</span> каждые 120 секунд</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class='group-kits'>
+                            <h1>Kit start | mysteruim</h1>
+                            <div class='group-kits-panel'>
+                                <div>
+                                    <div class='visible'>
+                                        <div data-count=2 data-name='Тестовое название предмета но очень длинное'><img src="../images/base/test-avatar.png"></div>
+                                        <div><img src="../images/base/test-avatar.png"></div>
+                                        <div><img src="../images/base/test-avatar.png"></div>
+                                        <div><img src="../images/base/test-avatar.png"></div>
+                                        <div><img src="../images/base/test-avatar.png"></div>
+                                        <div><img src="../images/base/test-avatar.png"></div>
+                                        <div><img src="../images/base/test-avatar.png"></div>
+                                        <div data-count=64 data-name='Название предмета'><img src="../images/base/test-avatar.png"></div>
+                                        <div><img src="../images/base/test-avatar.png"></div>
+                                        <div><img src="../images/base/test-avatar.png"></div>
+                                        <div><img src="../images/base/test-avatar.png"></div>
+                                        <div><img src="../images/base/test-avatar.png"></div>
+                                        <div><img src="../images/base/test-avatar.png"></div>
+                                        <div><img src="../images/base/test-avatar.png"></div>
+                                        <div><img src="../images/base/test-avatar.png"></div>
+                                        <div><img src="../images/base/test-avatar.png"></div>
+                                    </div>
+                                </div>
+                                <div class='paginator'></div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+            </div>
+        </div>
+        <footer>
+            <div class='info'>
+                <h1 class='section-name-text'>NIISABA</h1>
+                <h2>2019-2021 Проект игровых серверов minecraft с модами “niisaba”<br>Все Права на игру принадлежат Mojang ab. Приобрести игру можно на <a href='https://www.minecraft.net/ru-ru' target="_blank">официальном сайте</a>.<br>Связь с нами: <span>administration@niisaba.ru</span></h2>
+            </div>
+            <div class='links'>
+                <a href="">VK</a>
+                <a href="">TELEGRAM</a>
+                <a href="">DISCORD</a>
+            </div>
+        </footer>
+    </div>
+    <div id='login-panel'>
+        <div class='login-form-panel'>
+            <div class='header'>
+                <span>Авторизация пользователя</span>
+                <img src="../images/base/x-mark.svg" onclick="closeLoginMenu()">
+            </div>
+            <div id='login-form'>
+                <input type="text" placeholder="Логин" class='input-base'>
+                <input type="text" placeholder="Пароль" class='input-base'>
+                <input type="submit" value="Войти" onclick="">
+            </div>
+            <div class='subforms'>
+                <a href='123' class=''>Забыли пароль?</a>
+                <a href='456'>Регистрация</a>
+            </div>
+            <div class='links'>
+                <a href="">VK</a>
+                <a href="">TELEGRAM</a>
+                <a href="">DISCORD</a>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
