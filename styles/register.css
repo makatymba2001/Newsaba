@@ -1,0 +1,65 @@
+.register-form-container {
+  margin-top: 15px;
+  background: rgba(255, 255, 255, 0.05);
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  padding: 35px;
+  gap: 15px;
+}
+
+.register-form-container input {
+  text-transform: uppercase;
+  font-size: 14px;
+  height: 40px;
+  width: 100%;
+}
+
+.register-form-container input[type='submit'] {
+  cursor: pointer;
+}
+
+.register-form-container input#register-login {
+  text-transform: none;
+}
+
+.register-form-container > div {
+  display: flex;
+  flex-direction: row;
+  gap: inherit;
+}
+
+.register-form-container > div.pw {
+  flex-direction: row-reverse;
+}
+
+.register-form-container > div > div {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: inherit;
+}
+
+.register-form-container > div button {
+  cursor: pointer;
+  color: #ADADAD;
+  font-size: 14px;
+  text-transform: uppercase;
+  width: 350px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+@media (max-width: 480px) {
+  .register-form-container {
+    padding: 20px !important;
+  }
+  .register-form-container > div {
+    flex-direction: column !important;
+  }
+  .register-form-container > div button {
+    height: 40px;
+    width: 100% !important;
+  }
+}

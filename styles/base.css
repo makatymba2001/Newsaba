@@ -43,7 +43,7 @@ body {
 .button-base {
   text-align: center;
   border: 1px solid rgba(171, 171, 171, 0.35);
-  background: rgba(255, 255, 255, 0.02);
+  background: rgba(255, 255, 255, 0.04);
   transition: color 0.15s;
 }
 
@@ -60,6 +60,27 @@ body {
 
 .input-base:focus {
   border: 1px solid rgba(171, 171, 171, 0.6) !important;
+}
+
+.title-base h1 {
+  font-size: 24px;
+  font-weight: normal;
+  color: white;
+  margin-bottom: 5px;
+}
+
+.title-base h2 {
+  font-size: 16px;
+  font-weight: 300;
+  color: #DFDFDF !important;
+}
+
+.title-base a {
+  color: #39bce5;
+}
+
+.title-base a:hover {
+  color: #47cef7;
 }
 
 .section-name-text {
@@ -245,6 +266,11 @@ footer .info h2 {
   font-size: 12px;
   color: #ADADAD;
   line-height: 130%;
+}
+
+footer .info span {
+  text-decoration: underline;
+  color: #39bce5;
 }
 
 footer .links {

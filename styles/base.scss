@@ -52,7 +52,7 @@ body{
 .button-base{
     text-align: center;
     border: 1px solid rgba(171, 171, 171, 0.35);
-    background: rgba(255, 255, 255, 0.02);
+    background: rgba(255, 255, 255, 0.04);
     @include text-hover()
 }
 
@@ -63,6 +63,26 @@ body{
     border: 1px solid rgba(171, 171, 171, 0.35) !important;
     &:focus{
         border: 1px solid rgba(171, 171, 171, 0.6) !important;
+    }
+}
+
+.title-base{
+    h1{
+        font-size: 24px;
+        font-weight: normal;
+        color: white;
+        margin-bottom: 5px;
+    }
+    h2{
+        font-size: 16px;
+        font-weight: 300;
+        color: #DFDFDF !important;
+    }
+    a{
+        color: #39bce5;
+        &:hover{
+            color: #47cef7;
+        }
     }
 }
 
@@ -231,6 +251,10 @@ footer{
             font-size: 12px;
             color: #ADADAD;
             line-height: 130%;
+        }
+        span{
+            text-decoration: underline;
+            color: #39bce5;
         }
     }
     .links{
