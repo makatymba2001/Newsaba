@@ -18,7 +18,6 @@ h1, h2, h3, h4, h5 {
 }
 
 html {
-  min-height: 100%;
   overflow-x: hidden;
 }
 
@@ -27,14 +26,17 @@ body {
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
-  height: 100%;
 }
 
 .base-container {
-  padding: 40px 0;
-  padding-bottom: 0px !important;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  padding: 40px 60px;
+  padding-bottom: 20px !important;
   margin: auto;
-  width: 1100px;
+  width: 1500px;
+  max-width: 100%;
 }
 
 .button-base {
@@ -165,6 +167,7 @@ header > .right > a:hover {
 
 #base-content {
   display: flex;
+  flex: 1 0;
   gap: 20px;
   flex-direction: row;
   justify-content: space-between;
@@ -175,6 +178,14 @@ header > .right > a:hover {
   flex-direction: column;
   gap: 20px;
   width: 100%;
+}
+
+#base-content .left-container {
+  flex: 6 0;
+}
+
+#base-content .right-container {
+  flex: 4 0;
 }
 
 @media (max-width: 1150px) {
@@ -204,11 +215,11 @@ header > .right > a:hover {
 }
 
 footer {
+  margin-top: 30px;
   box-sizing: border-box;
-  margin-bottom: 20px;
-  margin-top: 20px;
   width: 100%;
   display: flex;
+  flex: 0 0;
   flex-direction: row;
   text-transform: uppercase;
   justify-content: space-between;
