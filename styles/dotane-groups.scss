@@ -1,41 +1,144 @@
-.donate-group{
+$base-font: 14px;
+@mixin font-size($i){
+    font-size: $i/$base-font * 1rem
+}
+@mixin text-hover{
+    transition: color 0.15s;
+    &:hover{
+        color: white !important;
+    }
+}
+@mixin display-flex($direction, $align, $justify){
+    display: flex;
+    flex-direction: $direction;
+    align-items: $align;
+    justify-content: $justify;
+}
+
+.donate-groups-server-paginator{
+    margin-bottom: 15px;
     display: flex;
     flex-direction: row;
-    
+    align-items: center;
+    gap: 5px;
+    @include font-size(16px);
+    &:before{
+        content: 'Серверы:';
+        padding-left: 0px;
+    }
+    & > div{
+        @include font-size(16px);
+        cursor: pointer;
+        border: 1px solid rgba(171, 171, 171, 0.35);
+        background: rgba(255, 255, 255, 0.04);
+        padding: 6px 10px 5px;
+        @include text-hover();
+        &.selected{
+            cursor: default;
+            background: rgba(255, 255, 255, 0.14);
+        }
+    }
+}
+
+.donate-groups-container{
+    display: none;
+    gap: 15px;
+    &.visible{
+        @include display-flex(column, center, normal);
+    };
+}
+
+// .donate-group{
+//     display: flex;
+//     width: 100%;
+//     padding: 20px;
+//     background: rgba(255, 255, 255, 0.05);
+//     .group-info-container{
+//         display: inherit;
+//         gap: 20px;
+//     }
+//     .group-image{
+//         flex-shrink: 0;
+//         height: 270px;
+//         width: 130px;
+//         background-size: cover;
+//         background-position: center;
+//     }
+//     .group-info{
+//         width: 100%;
+//         .title{
+//             margin-bottom: 15px;
+//             h1{
+//                 @include font-size(24px);
+//                 color: white;
+//                 margin-bottom: 5px;
+//             }
+//             h2{
+//                 @include font-size(16px);
+//                 font-weight: 300;
+//                 color: #DFDFDF;
+//             }
+//         }
+//         .info{
+//             p{
+//                 @include font-size(13px);
+//                 color: white;
+//                 font-weight: 300;
+//                 margin-block-start: 7px;
+//                 margin-block-end: 7px;
+//                 &:before{
+//                     content: '-';
+//                     margin-right: 5px;
+//                 }
+//                 span{
+//                     font-weight: 500;
+//                     text-transform: none !important;
+//                     background: rgba(255, 255, 255, 0.05);
+//                     padding: 0 3px;
+//                 }
+//             }
+//         }
+//     }
+// }
+
+.donate-group{
+    display: grid;
+    gap: 15px;
+    grid-template-areas: 
+        "a b c"
+        "a b d";
     width: 100%;
     padding: 20px;
     background: rgba(255, 255, 255, 0.05);
-    .group-info-container{
-        display: flex;
-        gap: 40px;
-        flex-direction: row;
-    }
     .group-image{
-        flex-shrink: 0;
+        flex-grow: 0;
+        grid-area: a;
         height: 270px;
         width: 130px;
         background-size: cover;
         background-position: center;
     }
     .group-info{
+       
+        grid-area: b;
         width: 100%;
         .title{
             margin-bottom: 15px;
             h1{
-                font-size: 24px;
-                font-weight: normal;
+                @include font-size(24px);
                 color: white;
                 margin-bottom: 5px;
             }
             h2{
-                font-size: 16px;
+                @include font-size(16px);
                 font-weight: 300;
                 color: #DFDFDF;
             }
         }
         .info{
             p{
-                font-size: 13px;
+                line-height: 110%;
+                @include font-size(13px);
                 color: white;
                 font-weight: 300;
                 margin-block-start: 7px;
@@ -56,70 +159,104 @@
 }
 
 .group-kits{
+    grid-area: c;
+    // width: 100%;
+    display: flex;
+    height: min-content;
+    gap: 6px;
     margin-left: auto;
     h1{
-        font-size: 22px;
+        @include font-size(20px);
         font-weight: 300;
         color: white;
         margin-bottom: 10px;
     }
-    .group-kits-panel{
-        display: flex;
-        flex-direction: row;
-        & > div > div{
-            &.visible{
-                display: grid;
-            }
-            gap: 5px;
-            display: none;
-            grid-template-columns: repeat(9, 1fr);
-            & > div{
-                position: relative;
-                background: rgba(255, 255, 255, 0.03);
-                border: 1px solid rgba(171, 171, 171, 0.1);
-                padding: 5px;
-                &:not([data-count='1']):before{
-                    content: attr(data-count);
-                    position: absolute;
-                    bottom: 0px;
-                    right: 0px;
-                    padding: 0px 3px;
-                    font-size: 11px;
-                    color: white;
-                    background: rgba(0, 0, 0, 0.3);
-                }
-                &[data-name]:after{
-                    content: attr(data-name);
-                    position: absolute;
-                    visibility: collapse;
-                    opacity: 0;
-                    top: -5px;
-                    left: 50%;
-                    transform: translate(-50%, -100%);
-                    font-size: 10px;
-                    line-height: 100%;
-                    text-align: center;
-                    width: 150px;
-                    background: #161514;
-                    padding: 5px;
-                    z-index: 1000;
-                    transition: opacity 0.1s, visibility 0.1s;
-                    border: 1px solid rgba(171, 171, 171, 0.1);
-                }
-                &:hover{
-                    cursor: help;
-                }
-                &[data-name]:hover:after{
-                    transition: opacity 0.1s;
-                    visibility: visible;
-                    opacity: 1;
-                }
-                img{
-                    height: 35px;
-                    display: block;
-                }
-            }
-            
+    .group-kits-container{
+        &.rows-2 .kit-items{
+            grid-template-rows: repeat(2, 1fr) !important;
+        }
+        &.rows-4 .kit-items{
+            grid-template-rows: repeat(4, 1fr) !important;
         }
     }
+    .paginator{
+        padding-top: 30px;
+        @include display-flex(column, center, center);
+        & > div{
+            gap: 12.5px;
+            @include display-flex(column, center, center);
+            & > div{
+                cursor: pointer;
+                padding: 5px 5px;
+                &:last-child img{
+                    transform: rotate(180deg);
+                }
+                img{
+                    height: 25px;
+                }
+            }
+        } 
+    }
+}
+
+.group-kit-item{  
+    display: none;
+    &.visible{
+        display: block;
+    }      
+    & > .kit-items{
+        display: grid;
+        grid-template-columns: repeat(9, 1fr);
+        gap: 3px;
+        & > div{
+            position: relative;
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid rgba(171, 171, 171, 0.1);
+            padding: 5px;
+            &:not([data-count='1']):before{
+                content: attr(data-count);
+                position: absolute;
+                bottom: 0px;
+                right: 0px;
+                padding: 0px 3px;
+                @include font-size(11px);
+                color: white;
+                background: rgba(0, 0, 0, 0.3);
+            }
+            &[data-name]:after{
+                content: attr(data-name);
+                position: absolute;
+                visibility: collapse;
+                opacity: 0;
+                top: -5px;
+                left: 50%;
+                transform: translate(-50%, -100%);
+                @include font-size(10px);
+                line-height: 100%;
+                text-align: center;
+                width: 150px;
+                background: #161514;
+                padding: 5px;
+                z-index: 1000;
+                transition: opacity 0.1s, visibility 0.1s;
+                border: 1px solid rgba(171, 171, 171, 0.1);
+            }
+            &:hover{
+                cursor: help;
+            }
+            &[data-name]:hover:after{
+                transition: opacity 0.1s;
+                visibility: visible;
+                opacity: 1;
+            }
+            img{
+                height: 35px;
+                display: block;
+            }
+        }
+    }
+}
+
+.group-flags{
+    grid-area: d;
 }

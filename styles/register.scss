@@ -1,13 +1,24 @@
+$base-font: 14px;
+@mixin font-size($i){
+    font-size: $i/$base-font * 1rem
+}
+
+@mixin display-flex($direction, $align, $justify){
+    display: flex;
+    flex-direction: $direction;
+    align-items: $align;
+    justify-content: $justify;
+}
+
 .register-form-container{
     margin-top: 15px;
     background: rgba(255, 255, 255, 0.05);
     width: 100%;
-    display: flex;
-    flex-direction: column;
+    @include display-flex(column, normal, normal);
     padding: 35px;
     gap: 15px;
     input{
-        font-size: 14px;
+        @include font-size(14px);
         height: 40px;
         width: 100%;
         &[type='submit']{
@@ -19,26 +30,22 @@
     }
     & > div{
         display: flex;
-        flex-direction: row;
         gap: inherit;
         &.pw{
             flex-direction: row-reverse;
         }
         & > div{
-            width: 100%;
-            display: flex;
-            flex-direction: column;
+            @include display-flex(column, normal, normal);
             gap: inherit;
+            width: 100%;
         }
         button{
             // border: none;
             cursor: pointer;
             color:#ADADAD;
-            font-size: 14px;
+            @include font-size(14px);
             width: 350px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
+            @include display-flex(row, center, center);
         }
     }
 }

@@ -1,3 +1,15 @@
+$base-font: 14px;
+@mixin font-size($i){
+    font-size: $i/$base-font * 1rem
+}
+
+@mixin display-flex($direction, $align, $justify){
+    display: flex;
+    flex-direction: $direction;
+    align-items: $align;
+    justify-content: $justify;
+}
+
 * {
     @import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400;1,500;1,600;1,700;1,800&display=swap');
     font-family: 'Open Sans';
@@ -7,6 +19,9 @@
     box-sizing: border-box;
     line-height: 100%;
     text-transform: uppercase;
+    font-size: $base-font;
+    font-weight: normal;
+    font-style: normal;
 }
 a{
     text-decoration: none;
@@ -29,11 +44,11 @@ body{
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
+    background-attachment: fixed;
 }
 .base-container{
     min-height: 100vh;
-    display: flex;
-    flex-direction: column;
+    @include display-flex(column, normal, normal);
     padding: 40px 60px;
     padding-bottom: 20px !important;
     margin: auto;
@@ -69,17 +84,17 @@ body{
 
 .title-base{
     h1{
-        font-size: 24px;
-        font-weight: normal;
+        @include font-size(24px);
         color: white;
         margin-bottom: 5px;
     }
     h2{
-        font-size: 16px;
+        @include font-size(12px);
         font-weight: 300;
         color: #DFDFDF !important;
     }
     a{
+        @include font-size(12px);
         color: #39bce5;
         &:hover{
             color: #47cef7;
@@ -89,8 +104,7 @@ body{
 
 .section-name-text{
     color: white;
-    font-size: 18px;
-    font-style: normal;
+    @include font-size(16px);
     font-weight: 400;
 }
 // ----------------------------
@@ -99,16 +113,10 @@ header{
     width: 100%;
     height: 40px;
     margin-bottom: 50px;
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: space-between;
+    @include display-flex(row, center, space-between);
     & > div{
-        display: flex;
-        flex-direction: row;
-        font-size: 20px;
-        align-items: center;
-        justify-content: space-around;
+        @include display-flex(row, center, space-around);
+        @include font-size(20px);
     }
     & > .left{
         position: relative;
@@ -118,8 +126,7 @@ header{
             cursor: pointer;
         }
         #mobile-menu{
-            display: flex;
-            flex-direction: column;
+            @include display-flex(column, normal, normal);
             position: absolute;
             opacity: 0;
             visibility: collapse;
@@ -128,7 +135,7 @@ header{
             top: 100%;
             left: 0;
             gap: 2px;
-            font-size: 18px;
+           @include font-size(18px);
             background-color: rgba(0, 0, 0, 0.6);
             &.visible{
                 transition: opacity 0.2s;
@@ -146,16 +153,15 @@ header{
             margin-right: 35px;
         }
         nav{
-            display: flex;
-            flex-direction: row;
+            @include display-flex(row, normal, normal);
             & > a{
                 font-weight: 300;
             @include text-hover;
                 &:not(:last-child):after{
                     content: '';
                     display: inline-block;
-                    height: 15px;
-                    width: 1.90px;
+                    height: 0.8rem;
+                    width: 1.5px;
                     margin: 0 10px;
                     background-color: #ADADAD;
                 }
@@ -167,9 +173,7 @@ header{
         padding: 0 7.5px;
         & > a{
             color: #ADADAD;
-            font-style: normal;
-            font-weight: normal;
-            font-size: 17px;
+            @include font-size(17px);
             padding: 0 10px;
             transition: color 0.1s;
             &:hover{
@@ -182,14 +186,11 @@ header{
 // ----------------------------
 
 #base-content{
-    display: flex;
+    @include display-flex(row, normal, space-between);
     flex: 1 0;
     gap: 20px;
-    flex-direction: row;
-    justify-content: space-between;
     .left-container, .right-container{
-        display: flex;
-        flex-direction: column;
+        @include display-flex(column, normal, normal);
         gap: 20px;
         width: 100%;
     }
@@ -216,7 +217,7 @@ header{
 
 @media (max-width: 480px) {
     header .right a{
-        font-size: 14px !important;
+        @include font-size(14px);
         padding: 0 5px !important;
     }
 }
@@ -227,11 +228,12 @@ footer{
     margin-top: 30px;
     box-sizing: border-box;
     width: 100%;
-    display: flex;
+    @include display-flex(row, normal, space-between);
     flex: 0 0;
-    flex-direction: row;
-    justify-content: space-between;
     .info{
+        a, h2, span{
+            @include font-size(12px);
+        }
         a:hover{
             text-decoration: underline;
         }
@@ -239,8 +241,6 @@ footer{
             margin-bottom: 10px;
         }
         h2{
-            font-weight: normal;
-            font-size: 12px;
             color: #ADADAD;
             line-height: 130%;
         }
@@ -252,13 +252,10 @@ footer{
     .links{
         margin-top: 12px;
         height: 100%;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: space-between;
+        @include display-flex(column, center, space-between);
         gap: 10px;
         a{
-            font-size: 12px;
+            @include font-size(12px);
             color: #A9A9A9;
             &:hover{
                 text-decoration: underline;
@@ -286,9 +283,7 @@ footer{
     visibility: collapse;
     opacity: 0;
     transition: visibility 0.15s, opacity 0.15s;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    @include display-flex(row, center, center);
     top: 0;
     left: 0;
     height: 100%;
@@ -301,21 +296,16 @@ footer{
     }
     .login-form-panel{
         box-shadow: 0px 0px 25px 5px rgba(0, 0, 0, 0.25);
-        font-size: 14px;
+        @include font-size(14px);
         font-weight: 300;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
+        @include display-flex(column, center, normal);
         gap: 15px;
         padding: 20px 25px;
         background-color: #131010;
         .header{
             margin-bottom: 20px;
             width: 100%;
-            display: flex;
-            flex-direction: row;
-            align-items: center;
-            justify-content: space-between;
+            @include display-flex(row, center, space-between);
             span{
                 color: #A9A9A9;
             }
@@ -330,13 +320,12 @@ footer{
             }
         }
         #login-form{
-            display: flex;
-            flex-direction: column;
+            @include display-flex(column, normal, normal);
             gap: 12.5px;
             input{
                 width: 500px;
                 height: 40px;
-                font-size: 14px;
+                @include font-size(14px);
                 font-weight: 300;
             }
             input[type='submit']{
@@ -351,12 +340,9 @@ footer{
             }
         }
         .subforms{
-            display: flex;
-            flex-direction: row;
-            align-items: center;
-            justify-content: space-around;
+            @include display-flex(row, center, space-around);
             width: 300px;
-            font-size: 12px;
+            @include font-size(12px);
             a{
                 @include text-hover()
             }
@@ -364,10 +350,7 @@ footer{
         .links{
             margin-top: 30px;
             width: 100%;
-            display: flex;
-            flex-direction: row;
-            align-items: center;
-            justify-content: space-around;
+            @include display-flex(row, center, space-around);
             a{
                 color: #A9A9A9 !important;
                 @include text-hover()

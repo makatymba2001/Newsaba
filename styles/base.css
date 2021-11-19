@@ -4,9 +4,13 @@
   margin: 0;
   padding: 0;
   color: rgba(255, 255, 255, 0.85);
-  box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
   line-height: 100%;
   text-transform: uppercase;
+  font-size: 14px;
+  font-weight: normal;
+  font-style: normal;
 }
 
 a {
@@ -15,8 +19,10 @@ a {
 }
 
 h1, h2, h3, h4, h5 {
-  margin-block-start: 0;
-  margin-block-end: 0;
+  -webkit-margin-before: 0;
+          margin-block-start: 0;
+  -webkit-margin-after: 0;
+          margin-block-end: 0;
 }
 
 html {
@@ -24,16 +30,29 @@ html {
 }
 
 body {
+  background-image: -webkit-gradient(linear, left bottom, left top, from(rgba(0, 0, 0, 0.9)), to(rgba(0, 0, 0, 0.9))), url("../images/base/background.jpg");
   background-image: linear-gradient(0deg, rgba(0, 0, 0, 0.9), rgba(0, 0, 0, 0.9)), url("../images/base/background.jpg");
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
+  background-attachment: fixed;
 }
 
 .base-container {
   min-height: 100vh;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  flex-direction: column;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: normal;
+      -ms-flex-align: normal;
+          align-items: normal;
+  -webkit-box-pack: normal;
+      -ms-flex-pack: normal;
+          justify-content: normal;
   padding: 40px 60px;
   padding-bottom: 20px !important;
   margin: auto;
@@ -45,6 +64,7 @@ body {
   text-align: center;
   border: 1px solid rgba(171, 171, 171, 0.35);
   background: rgba(255, 255, 255, 0.04);
+  -webkit-transition: color 0.15s;
   transition: color 0.15s;
 }
 
@@ -64,19 +84,19 @@ body {
 }
 
 .title-base h1 {
-  font-size: 24px;
-  font-weight: normal;
+  font-size: 1.71429rem;
   color: white;
   margin-bottom: 5px;
 }
 
 .title-base h2 {
-  font-size: 16px;
+  font-size: 0.85714rem;
   font-weight: 300;
   color: #DFDFDF !important;
 }
 
 .title-base a {
+  font-size: 0.85714rem;
   color: #39bce5;
 }
 
@@ -86,8 +106,7 @@ body {
 
 .section-name-text {
   color: white;
-  font-size: 18px;
-  font-style: normal;
+  font-size: 1.14286rem;
   font-weight: 400;
 }
 
@@ -95,18 +114,35 @@ header {
   width: 100%;
   height: 40px;
   margin-bottom: 50px;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  flex-direction: row;
-  align-items: center;
-  justify-content: space-between;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
 }
 
 header > div {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  flex-direction: row;
-  font-size: 20px;
-  align-items: center;
-  justify-content: space-around;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  font-size: 1.42857rem;
 }
 
 header > .left {
@@ -120,21 +156,34 @@ header > .left #menu-button {
 }
 
 header > .left #mobile-menu {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  flex-direction: column;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: normal;
+      -ms-flex-align: normal;
+          align-items: normal;
+  -webkit-box-pack: normal;
+      -ms-flex-pack: normal;
+          justify-content: normal;
   position: absolute;
   opacity: 0;
   visibility: collapse;
+  -webkit-transition: opacity 0.2s, visibility 0.2s 0.2s;
   transition: opacity 0.2s, visibility 0.2s 0.2s;
   margin-top: 8px;
   top: 100%;
   left: 0;
   gap: 2px;
-  font-size: 18px;
+  font-size: 1.28571rem;
   background-color: rgba(0, 0, 0, 0.6);
 }
 
 header > .left #mobile-menu.visible {
+  -webkit-transition: opacity 0.2s;
   transition: opacity 0.2s;
   visibility: visible;
   opacity: 1;
@@ -152,12 +201,24 @@ header > .left > .logo {
 }
 
 header > .left nav {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  flex-direction: row;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-align: normal;
+      -ms-flex-align: normal;
+          align-items: normal;
+  -webkit-box-pack: normal;
+      -ms-flex-pack: normal;
+          justify-content: normal;
 }
 
 header > .left nav > a {
   font-weight: 300;
+  -webkit-transition: color 0.15s;
   transition: color 0.15s;
 }
 
@@ -168,8 +229,8 @@ header > .left nav > a:hover {
 header > .left nav > a:not(:last-child):after {
   content: '';
   display: inline-block;
-  height: 15px;
-  width: 1.90px;
+  height: 0.8rem;
+  width: 1.5px;
   margin: 0 10px;
   background-color: #ADADAD;
 }
@@ -181,10 +242,9 @@ header > .right {
 
 header > .right > a {
   color: #ADADAD;
-  font-style: normal;
-  font-weight: normal;
-  font-size: 17px;
+  font-size: 1.21429rem;
   padding: 0 10px;
+  -webkit-transition: color 0.1s;
   transition: color 0.1s;
 }
 
@@ -193,16 +253,39 @@ header > .right > a:hover {
 }
 
 #base-content {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  flex: 1 0;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-align: normal;
+      -ms-flex-align: normal;
+          align-items: normal;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-flex: 1;
+      -ms-flex: 1 0;
+          flex: 1 0;
   gap: 20px;
-  flex-direction: row;
-  justify-content: space-between;
 }
 
 #base-content .left-container, #base-content .right-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  flex-direction: column;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: normal;
+      -ms-flex-align: normal;
+          align-items: normal;
+  -webkit-box-pack: normal;
+      -ms-flex-pack: normal;
+          justify-content: normal;
   gap: 20px;
   width: 100%;
 }
@@ -213,7 +296,10 @@ header > .right > a:hover {
     padding: 20px 25px;
   }
   #base-content {
-    flex-direction: column;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
   }
 }
 
@@ -228,19 +314,36 @@ header > .right > a:hover {
 
 @media (max-width: 480px) {
   header .right a {
-    font-size: 14px !important;
+    font-size: 1rem;
     padding: 0 5px !important;
   }
 }
 
 footer {
   margin-top: 30px;
-  box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
   width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  flex: 0 0;
-  flex-direction: row;
-  justify-content: space-between;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-align: normal;
+      -ms-flex-align: normal;
+          align-items: normal;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-flex: 0;
+      -ms-flex: 0 0;
+          flex: 0 0;
+}
+
+footer .info a, footer .info h2, footer .info span {
+  font-size: 0.85714rem;
 }
 
 footer .info a:hover {
@@ -252,8 +355,6 @@ footer .info h1 {
 }
 
 footer .info h2 {
-  font-weight: normal;
-  font-size: 12px;
   color: #ADADAD;
   line-height: 130%;
 }
@@ -266,15 +367,24 @@ footer .info span {
 footer .links {
   margin-top: 12px;
   height: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: space-between;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
   gap: 10px;
 }
 
 footer .links a {
-  font-size: 12px;
+  font-size: 0.85714rem;
   color: #A9A9A9;
 }
 
@@ -284,10 +394,16 @@ footer .links a:hover {
 
 @media (max-width: 480px) {
   footer {
-    flex-direction: column;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
   }
   footer .links {
-    flex-direction: row;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
   }
   footer .links a {
     font-size: 20px !important;
@@ -298,30 +414,54 @@ footer .links a:hover {
   position: fixed;
   visibility: collapse;
   opacity: 0;
+  -webkit-transition: visibility 0.15s, opacity 0.15s;
   transition: visibility 0.15s, opacity 0.15s;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  align-items: center;
-  justify-content: center;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
   top: 0;
   left: 0;
   height: 100%;
   width: 100%;
-  backdrop-filter: blur(3px);
+  -webkit-backdrop-filter: blur(3px);
+          backdrop-filter: blur(3px);
 }
 
 #login-panel.visible {
+  -webkit-transition: visibility 0s, opacity 0.15s;
   transition: visibility 0s, opacity 0.15s;
   visibility: visible;
   opacity: 1;
 }
 
 #login-panel .login-form-panel {
-  box-shadow: 0px 0px 25px 5px rgba(0, 0, 0, 0.25);
-  font-size: 14px;
+  -webkit-box-shadow: 0px 0px 25px 5px rgba(0, 0, 0, 0.25);
+          box-shadow: 0px 0px 25px 5px rgba(0, 0, 0, 0.25);
+  font-size: 1rem;
   font-weight: 300;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  flex-direction: column;
-  align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: normal;
+      -ms-flex-pack: normal;
+          justify-content: normal;
   gap: 15px;
   padding: 20px 25px;
   background-color: #131010;
@@ -330,10 +470,19 @@ footer .links a:hover {
 #login-panel .login-form-panel .header {
   margin-bottom: 20px;
   width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  flex-direction: row;
-  align-items: center;
-  justify-content: space-between;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
 }
 
 #login-panel .login-form-panel .header span {
@@ -341,26 +490,42 @@ footer .links a:hover {
 }
 
 #login-panel .login-form-panel .header img {
-  filter: brightness(65%);
+  -webkit-filter: brightness(65%);
+          filter: brightness(65%);
   cursor: pointer;
   height: 24px;
+  -webkit-transition: -webkit-filter 0.15s;
+  transition: -webkit-filter 0.15s;
   transition: filter 0.15s;
+  transition: filter 0.15s, -webkit-filter 0.15s;
 }
 
 #login-panel .login-form-panel .header img:hover {
-  filter: brightness(100%);
+  -webkit-filter: brightness(100%);
+          filter: brightness(100%);
 }
 
 #login-panel .login-form-panel #login-form {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  flex-direction: column;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: normal;
+      -ms-flex-align: normal;
+          align-items: normal;
+  -webkit-box-pack: normal;
+      -ms-flex-pack: normal;
+          justify-content: normal;
   gap: 12.5px;
 }
 
 #login-panel .login-form-panel #login-form input {
   width: 500px;
   height: 40px;
-  font-size: 14px;
+  font-size: 1rem;
   font-weight: 300;
 }
 
@@ -368,6 +533,7 @@ footer .links a:hover {
   padding: 6px 15px 4px;
   cursor: pointer;
   background: rgba(255, 255, 255, 0.15);
+  -webkit-transition: background 0.2s;
   transition: background 0.2s;
   border: 1px solid rgba(171, 171, 171, 0.35) !important;
 }
@@ -377,15 +543,24 @@ footer .links a:hover {
 }
 
 #login-panel .login-form-panel .subforms {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  flex-direction: row;
-  align-items: center;
-  justify-content: space-around;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
   width: 300px;
-  font-size: 12px;
+  font-size: 0.85714rem;
 }
 
 #login-panel .login-form-panel .subforms a {
+  -webkit-transition: color 0.15s;
   transition: color 0.15s;
 }
 
@@ -396,14 +571,23 @@ footer .links a:hover {
 #login-panel .login-form-panel .links {
   margin-top: 30px;
   width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  flex-direction: row;
-  align-items: center;
-  justify-content: space-around;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
 }
 
 #login-panel .login-form-panel .links a {
   color: #A9A9A9 !important;
+  -webkit-transition: color 0.15s;
   transition: color 0.15s;
 }
 

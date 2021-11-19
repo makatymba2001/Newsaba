@@ -1,3 +1,15 @@
+$base-font: 14px;
+@mixin font-size($i){
+    font-size: $i/$base-font * 1rem
+}
+
+@mixin display-flex($direction, $align, $justify){
+    display: flex;
+    flex-direction: $direction;
+    align-items: $align;
+    justify-content: $justify;
+}
+
 #base-content{
     .left-container{
         flex: 6 0;
@@ -21,7 +33,7 @@
     height: min-content;
     display: grid;
     gap: 5px 5px;
-    font-size: 14px;
+    @include font-size(14px);
     grid-template-areas: 
         "a a a" 
         "b c d";
@@ -30,11 +42,9 @@
             grid-area: a
         }
         & > div{
-            font-size: 16px;
+            @include font-size(16px);
             height: 40px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
+            @include display-flex(row, center, center);
             vertical-align: middle;
             color: #A9A9A9;
             &.main{
@@ -47,14 +57,12 @@
     width: 100%;
     h1{
         color: #FFFFFF;
-        font-size: 28px;
-        font-weight: normal;
+        font-size: 1.75rem;
     }
     h2{
         margin-top: 5px;
         color: #DFDFDF;
-        font-size: 16px;
-        font-weight: normal;
+        font-size: 1rem;
     }
 }
 
@@ -81,9 +89,7 @@
 
 .news-container{
     .header{
-        display: flex;
-        flex-direction: row;
-        align-items: center;
+        @include display-flex(row, center, normal);
         margin-bottom: 12px;
         div{
             height: 1px;
@@ -95,20 +101,15 @@
         }
     }
     .news-flex-container{
+        @include display-flex(row, normal, normal);
         gap: 20px;
-        display: flex;
-        flex-direction: row;
     }
     .news-paginator{
         user-select: none;
-        display: flex;
-        flex-direction: column;
+        @include display-flex(column, normal, normal);
         gap: 15px;
         & > div{
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            justify-content: center;
+            @include display-flex(row, center, center);
             width: 35px;
             height: 150px;
             writing-mode: tb-rl;
@@ -121,67 +122,66 @@
                 transform: rotate(180deg);
             }
             &:nth-child(2){
-                font-size: 18px;
+                @include font-size(18px);
                 color: rgba(255, 255, 255, 0.83);
                 background: none;
                 height: 90px;
                 cursor: default;
             }
             span:first-child{
-                font-size: 24px;
+                @include font-size(24px);
                 color: white;
             }
         }
     }
+    .news-panel{
+        position: relative;
+        width: 100%;
+        overflow: hidden;
+        #news{
+            transition: top 0.25s;
+            position: absolute;
+            min-height: 100%;
+            width: 100%;
+            gap: 0 20px;
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr 1fr;
+        }
+    }
+    
 }
 
-.news-panel{
+.news-item{
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-clip: padding-box;
     position: relative;
-    width: 100%;
-    overflow: hidden;
-    #news{
-        transition: top 0.25s;
+    height: 420px;
+    border: 1px solid rgba(173, 173, 173, 0.35);
+    $news-padding: 6px;
+    .date{
         position: absolute;
-        min-height: 100%;
-        width: 100%;
-        gap: 0 20px;
-        display: grid;
-        grid-template-columns: 1fr 1fr 1fr 1fr;
-        .news-item{
-            background-size: cover;
-            background-position: center;
-            background-repeat: no-repeat;
-            background-clip: padding-box;
-            position: relative;
-            height: 420px;
-            border: 1px solid rgba(173, 173, 173, 0.35);
-            $news-padding: 6px;
-            .date{
-                position: absolute;
-                font-size: 24px;
-                top: $news-padding;
-                left: $news-padding;
-                color: white;
-            }
-            .info{
-                position: absolute;
-                bottom: $news-padding;
-                left: $news-padding;
-                right: $news-padding;
-                display: flex;
-                flex-direction: column;
-                h1{
-                    font-weight: normal;
-                    font-size: 20px;
-                    color: #FFFFFF;
-                }
-                h2{
-                    margin-top: 5px;
-                    font-size: 16px;
-                    font-weight: 300;
-                    color: #DFDFDF;
-                }
-            }
+        @include font-size(24px);
+        top: $news-padding;
+        left: $news-padding;
+        color: white;
+    }
+    .info{
+        position: absolute;
+        bottom: $news-padding;
+        left: $news-padding;
+        right: $news-padding;
+        @include display-flex(column, normal, normal);
+        h1{
+            @include font-size(18px);
+            color: #FFFFFF;
+        }
+        h2{
+            margin-top: 5px;
+            @include font-size(12px);
+            font-weight: 300;
+            color: #DFDFDF;
         }
     }
 }
@@ -228,24 +228,19 @@ $server-panel-height: 55px;
 .server-item{
     width: 100%;
     height: $server-panel-height;
-    display: flex;
-    align-items: center;
+    @include display-flex(row, center, normal);
     &:before{
-        display: flex;
+        @include display-flex(row, center, center);
         flex-shrink: 0;
-        align-items: center;
-        justify-content: center;
         content: attr(data-online);
         margin-right: 5px;
         height: $server-panel-height - 2;
         width: $server-panel-height - 2;
-        font-size: 28px;
+        @include font-size(28px);
         background: rgba(255, 255, 255, 0.03);
     }
     & > div{
-        display: flex;
-        justify-content: center;
-        flex-direction: column;
+        @include display-flex(column, normal, center);
         gap: 6px;
         background: rgba(255, 255, 255, 0.03);
         padding: 8px;
@@ -253,15 +248,14 @@ $server-panel-height: 55px;
         width: 100%;
         & > div{
             color: white;
-            display: flex;
-            align-items: center;
+            @include display-flex(row, center, normal);
             &:last-child{
-                font-size: 12px;
+                @include font-size(12px);
                 color: #DFDFDF;
             }
             span{
                 margin-left: 5px;
-                font-size: 12px;
+                @include font-size(12px);
                 color: #ADADAD;
             }
         }
@@ -287,16 +281,14 @@ $server-panel-height: 55px;
 }
 
 .server-online{
-    display: flex;
-    justify-content: center;
-    flex-direction: column;
+    @include display-flex(column, normal, center);
     gap: 10px;
     margin-top: 15px;
     height: 60px;
     width: 100%;
     background: rgba(255, 255, 255, 0.03);
     border: solid 1px rgba(255, 255, 255, 0.25);
-    font-size: 16px;
+    @include font-size(16px);
     padding: 10px;
     & > div{
         width: 100%;
@@ -330,8 +322,7 @@ $voting-image-height: 85px;
         h1{
             text-align: center;
             color: white;
-            font-size: 18px;
-            font-style: normal;
+            @include font-size(18px);
             font-weight: 400;
             margin-bottom: 10px;
         }
@@ -340,8 +331,7 @@ $voting-image-height: 85px;
             background: rgba(255, 255, 255, 0.03);
             border: 1px solid rgba(171, 171, 171, 0.06);
             gap: 10px;
-            display: flex;
-            flex-direction: column;
+            @include display-flex(column, normal, normal);
             div{
                 padding: 10px 5px;
             }
@@ -351,15 +341,14 @@ $voting-image-height: 85px;
         #voting-top{
             margin-top: 10px;
             display: grid;
-            grid-template-columns: $voting-image-height $voting-image-height $voting-image-height;
+            grid-template-columns: repeat(3, $voting-image-height);
             flex-wrap: wrap;
             justify-content: space-between;
             gap: 10px 15px;
             & > a{
                 width: $voting-image-height;
-                display: flex;
-                flex-direction: column;
-                font-size: 10px;
+                @include display-flex(column, normal, normal);
+                @include font-size(10px);
                 align-items: center;
                 text-align: center;
                 word-break: break-word;
@@ -383,7 +372,7 @@ $voting-image-height: 85px;
                     position: absolute;
                     top: 8px;
                     left: 4px;
-                    font-size: 18px;
+                    @include font-size(18px);
                 }
                 &:nth-child(1):after{
                     content: '1';
